@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Dog {
@@ -19,6 +20,8 @@ public class Dog {
 
     @NonNull
     private String sex;
+
+    //private Date birthDate;
 
     //JPA
     public Dog(){}

@@ -21,7 +21,7 @@ public class Litter {
 
     @NonNull
     @Temporal(TemporalType.DATE)
-    private Date birthDate;
+    private Date birthDateOfLitter;
 
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Dog> pupsOfLitter;
@@ -29,10 +29,10 @@ public class Litter {
     //JPA
     public Litter(){}
 
-    public Litter(String pedigreeNameOfMother, String pedigreeNameOfFather, Date birthDate, List<Dog> pupsOfLitter) {
+    public Litter(String pedigreeNameOfMother, String pedigreeNameOfFather, Date birthDateOfLitter, List<Dog> pupsOfLitter) {
         this.pedigreeNameOfMother = pedigreeNameOfMother;
         this.pedigreeNameOfFather = pedigreeNameOfFather;
-        this.birthDate = birthDate;
+        this.birthDateOfLitter = birthDateOfLitter;
         this.pupsOfLitter = pupsOfLitter;
     }
 
@@ -60,12 +60,12 @@ public class Litter {
         this.pedigreeNameOfFather = pedigreeNameOfFather;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirthDateOfLitter() {
+        return birthDateOfLitter;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDateOfLitter(Date birthDateOfLitter) {
+        this.birthDateOfLitter = birthDateOfLitter;
     }
 
     public List<Dog> getPupsOfLitter() {
