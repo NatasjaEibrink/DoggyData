@@ -1,7 +1,5 @@
 package nl.eibrink.doggydata.model;
 
-import org.springframework.lang.NonNull;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,20 +13,19 @@ public class Dog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NonNull
     private String pedigreeName;
 
-    @NonNull
     private String sex;
 
-    //private Date birthDate;
+    private Date birthDate;
 
     //JPA
     public Dog(){}
 
-    public Dog(String pedigreeName, String sex) {
+    public Dog(String pedigreeName, String sex, Date birthDate) {
         this.pedigreeName = pedigreeName;
         this.sex = sex;
+        this.birthDate = birthDate;
     }
 
     public Integer getId() {
@@ -53,5 +50,13 @@ public class Dog {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 }
