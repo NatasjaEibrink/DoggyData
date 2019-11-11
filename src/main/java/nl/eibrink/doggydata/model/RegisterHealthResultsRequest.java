@@ -1,15 +1,7 @@
-
 package nl.eibrink.doggydata.model;
-
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-public class HealthTest {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class RegisterHealthResultsRequest {
 
     private String patella;
 
@@ -17,28 +9,15 @@ public class HealthTest {
 
     private String ogen;
 
-    @Temporal(TemporalType.DATE)
     private Date dateOfExamination;
 
-    @ManyToOne
-    private Dog dog;
+    public RegisterHealthResultsRequest(){}
 
-    public HealthTest(){}
-
-    public HealthTest(String patella, String heupen, String ogen, Date dateOfExamination, Dog dog) {
+    public RegisterHealthResultsRequest(String patella, String heupen, String ogen, Date dateOfExamination) {
         this.patella = patella;
         this.heupen = heupen;
         this.ogen = ogen;
         this.dateOfExamination = dateOfExamination;
-        this.dog = dog;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getPatella() {
@@ -72,13 +51,4 @@ public class HealthTest {
     public void setDateOfExamination(Date dateOfExamination) {
         this.dateOfExamination = dateOfExamination;
     }
-
-    public Dog getDog() {
-        return dog;
-    }
-
-    public void setDog(Dog dog) {
-        this.dog = dog;
-    }
 }
-
