@@ -1,10 +1,8 @@
 package nl.eibrink.doggydata.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Dog {
@@ -21,6 +19,10 @@ public class Dog {
 
     //JPA
     public Dog(){}
+
+    public Dog(Integer id){
+        this.id = id;
+    }
 
     public Dog(String pedigreeName, String sex, Date birthDate) {
         this.pedigreeName = pedigreeName;
