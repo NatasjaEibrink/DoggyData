@@ -1,4 +1,4 @@
-package nl.eibrink.doggydata.model;
+package nl.eibrink.doggydata.model.registrationObjects;
 import java.util.Date;
 
 public class RegisterHealthResultsRequest {

@@ -2,7 +2,7 @@ package nl.eibrink.doggydata.controllers;
 
 import nl.eibrink.doggydata.model.Dog;
 import nl.eibrink.doggydata.model.HealthTest;
-import nl.eibrink.doggydata.model.RegisterHealthResultsRequest;
+import nl.eibrink.doggydata.model.registrationObjects.RegisterHealthResultsRequest;
 import nl.eibrink.doggydata.repository.DogRepository;
 import nl.eibrink.doggydata.repository.HealthTestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
