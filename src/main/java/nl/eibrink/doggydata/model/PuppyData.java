@@ -55,4 +55,9 @@ public class PuppyData {
     public void setDog(Dog dog) {
         this.dog = dog;
     }
+
+    @Override
+    public String toString(){
+        return weekNumber+" "+weight+" ";
+    }
 }
