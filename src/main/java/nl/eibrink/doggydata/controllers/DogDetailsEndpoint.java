@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -51,9 +52,16 @@ public class DogDetailsEndpoint {
             throw new NoSuchElementException();
         }
 
-        Integer dogId = dog.get().getId();
-        Optional<ImageModel> image = imageRepository.findById(dogId);
-        return image.orElse(null);
+        ImageModel latestImage;
 
+        Integer dogId = dog.get().getId();
+        List<ImageModel> images = imageRepository.findByDogId(dogId);
+        if(images.size() > 0) {
+            latestImage = images.get(images.size() - 1);
+        } else {
+            return null;
+        }
+
+        return latestImage;
     }
 }
